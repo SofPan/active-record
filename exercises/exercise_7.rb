@@ -43,14 +43,20 @@ puts @storeless_employee.valid?
 puts @storeless_employee.errors.full_messages
 
 # ----- Stores with errors ----- #
-# Store name is less than 3 characters
-# @short_store_name = Store.create(name: "AB", annual_revenue: 300000, mens_apparel: true, womens_apparel: true)
+puts "Store name is less than 3 characters test"
+@short_store_name = Store.create(name: "AB", annual_revenue: 300000, mens_apparel: true, womens_apparel: true)
+puts @short_store_name.valid?
+puts @short_store_name.errors.full_messages
 
-# Annual revenue is not a number
-# @wrong_revenue = Store.create(name: "ABCD", annual_revenue: "One million dollars", mens_apparel: true, womens_apparel: true)
+puts "Annual revenue is not a number test"
+@wrong_revenue = Store.create(name: "ABCD", annual_revenue: "One million dollars", mens_apparel: true, womens_apparel: true)
+puts @wrong_revenue.valid?
+puts @wrong_revenue.errors.full_messages
 
-# Store does not carry mens or womens apparel 
-# @no_apparel = Store.create(name: "EFGH", annual_revenue: 300000, mens_apparel: false, womens_apparel: false)
+puts "Store does not carry mens or womens apparel  test"
+@no_apparel = Store.create(name: "EFGH", annual_revenue: 300000, mens_apparel: false, womens_apparel: false)
+puts @no_apparel.valid?
+puts @no_apparel.errors.full_messages
 
 
 
