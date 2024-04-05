@@ -58,6 +58,22 @@ puts "Store does not carry mens or womens apparel  test"
 puts @no_apparel.valid?
 puts @no_apparel.errors.full_messages
 
+# User inputs and validations
+
+puts "----- User Inputs and Validations -----"
+
+puts "Please enter a store name: "
+@user_store_name = gets.chomp
+
+@user_store = Store.create(name: @user_store_name)
+
+user_errors = @user_store.errors
+
+for error in user_errors
+  puts error.full_message
+end
+
+
 
 
 
